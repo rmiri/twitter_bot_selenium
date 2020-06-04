@@ -15,6 +15,9 @@ CHROMEDRIVERPATH = '/Users/rmiriuk/chromedriver'
 userUsername = password.USERNAME
 userPassword = password.PASSWORD
 
+# change your message here:
+tweetMessage = 'I am a bot, bip bop'
+
 def main():
     # open the browser
     browser = webdriver.Chrome(CHROMEDRIVERPATH)
@@ -34,7 +37,7 @@ def main():
     browser.implicitly_wait(5)
 
     tweet = browser.find_element_by_css_selector("br[data-text='true']")
-    tweet.send_keys('hello')
+    tweet.send_keys(tweetMessage)
     button = browser.find_element_by_css_selector("div[data-testid='tweetButtonInline']")
     button.click()
 
